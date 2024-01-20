@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Booleans</title>
+  <style>
+    .red-button{
+      background-color: red;
+      color: white;
+      border: none;
+    }
+    .yellow-button{
+      background-color: yellow;
+    }
+    .orange-button{
+        background-color: orange;
+    }
+  </style>
+</head>
+<body>
+    <p>Roch paper scissors</p>
+    <button onclick="
+        
+        let result=' ';
+        
+        computerChoice=generateResult();
+        
+        result+='you choose rock. Computer chooses '+computerChoice;
+        if(computerChoice==='rock'){
+            result+=('. tie!');
+        }
+        else if(computerChoice==='paper'){
+            result+=('. you loose!');
+            numberLosses++;
+        }
+        else{
+            result+=('. you win!');
+            numberWins++;
+        }
+        console.log(result);
+        alert(result);
+        
+    ">Rock</button>
+    <button onclick="
+        result='';
+        
+        computerChoice=generateResult();
+        result+=('you choose paper. Computer chooses '+computerChoice);
+        if(computerChoice==='paper'){
+            result+=('. tie!');
+        }
+        else if(computerChoice==='scissors'){
+            result+=('. you loose!');
+            numberLosses++;
+        }
+        else{
+            result+=('. you win!');
+            numberWins++;
+        }
+        alert(result);
+        console.log(result);
+    ">Paper</button>
+    <button onclick="
+        result='';
+        computerChoice=generateResult();
+        result+=('you choose scissors. Computer chooses '+computerChoice);
+        if(computerChoice==='scissors'){
+            result+=('. tie!');
+        }
+        else if(computerChoice==='rock'){
+            result+=('. you loose!');
+            numberLosses++;
+        }
+        else{
+            result+=('. you win!');
+            numberWins++;
+        }
+        alert(result);
+        console.log(result);
+    ">Scissors</button>
+<script>
+    function generateResult(){
+        randomNumber = Math.random();
+        
+        if(randomNumber>=0 && randomNumber<1/3){
+             computerChoice='rock';
+        }
+        else if (randomNumber<2/3){
+             computerChoice='paper';
+        }
+        else{
+             computerChoice='scissors';
+        }
+        return computerChoice;
+    }
+    let numberWins=0;
+    let numberLosses=0;
+    let computerChoice;
+</script>
+</body>
+
+</html>
+
+
