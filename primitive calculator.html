@@ -4,25 +4,25 @@
 </head>
 <body>
     
-        <button onclick="calculate+='1'; console.log(calculate)">1</button>
-        <button onclick="calculate+='2'; console.log(calculate)">2</button>
-        <button onclick="calculate+='3'; console.log(calculate)">3</button>
+        <button onclick="calculate+='1'; console.log(calculate); update()">1</button>
+        <button onclick="calculate+='2'; console.log(calculate); update()">2</button>
+        <button onclick="calculate+='3'; console.log(calculate); update()">3</button>
     <br>
-        <button onclick="calculate+='4'; console.log(calculate)">4</button>
-        <button onclick="calculate+='5'; console.log(calculate)">5</button>
-        <button onclick="calculate+='6'; console.log(calculate)">6</button>
+        <button onclick="calculate+='4'; console.log(calculate); update()">4</button>
+        <button onclick="calculate+='5'; console.log(calculate); update()">5</button>
+        <button onclick="calculate+='6'; console.log(calculate); update()">6</button>
     <br>
-        <button onclick="calculate+='7'; console.log(calculate)">7</button>
-        <button onclick="calculate+='8'; console.log(calculate)">8</button>
-        <button onclick="calculate+='9'; console.log(calculate)">9</button>
+        <button onclick="calculate+='7'; console.log(calculate); update()">7</button>
+        <button onclick="calculate+='8'; console.log(calculate); update()">8</button>
+        <button onclick="calculate+='9'; console.log(calculate); update()">9</button>
     <br>
-        <button onclick="calculate+=' + '; console.log(calculate)">+</button>
-        <button onclick="calculate+='0'; console.log(calculate)">0</button>
-        <button onclick="calculate+=' - '; console.log(calculate)">-</button>
+        <button onclick="calculate+=' + '; console.log(calculate); update()">+</button>
+        <button onclick="calculate+='0'; console.log(calculate); update()">0</button>
+        <button onclick="calculate+=' - '; console.log(calculate); update()">-</button>
     <br>
-        <button onclick="calculate+=' * '; console.log(calculate)">*</button>
-        <button onclick="calculate=eval(calculate).toString(); console.log(calculate)"><h5>=</h5></button>
-        <button onclick="calculate+=' / '; console.log(calculate)">/</button>
+        <button onclick="calculate+=' * '; console.log(calculate); update()">*</button>
+        <button onclick="calculate=eval(calculate).toString(); console.log(calculate); update()"><h5>=</h5></button>
+        <button onclick="calculate+=' / '; console.log(calculate); update()">/</button>
         
     <br>
         <button onclick="
@@ -32,6 +32,11 @@
     </p>
     
     <script>
-        let calculate=""
+        
+        let calculate=localStorage.getItem("calculation")||"";
+        console.log(calculate);
+        function update(){
+            localStorage.setItem("calculation", calculate);
+        }
     </script>
 </body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="
+            alert(playGame('heads'));
+            update();
+        ">heads</button>
+    <button onclick="
+        alert(playGame('tails'));
+        update();    
+    ">tails</button>
+    <button onclick="
+        score={
+            wins:0,
+            losses:0
+        }
+        update();
+    ">Reset</button>
+    <script>
+        let score=JSON.parse(localStorage.getItem("score"))||{
+            wins: 0,
+            losses: 0
+        }
+        console.log(score);
+        function update(){
+            localStorage.setItem("score", JSON.stringify(score));
+        }
+        function playGame(playerChoice){
+            let computerChoice;
+            let number=Math.random()
+            if(number>0 && number<=0.5){
+                computerChoice="heads";
+            }
+            else computerChoice="tails"
+            let message="you choose "+playerChoice+". computer chooses "+computerChoice;
+            if (playerChoice===computerChoice){
+                score.wins++;
+                message+=`. You win!\nWins: ${score.wins}, losses: ${score.losses}`
+            }
+            else{
+                score.losses++;
+                message+=`. You lose!\nWins: ${score.wins}, losses: ${score.losses}`
+            }
+            return message;
+        }
+        
+    </script>
+</body>
+</html>
