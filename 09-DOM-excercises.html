@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>9a</button>
+    <button class="second">9b</button>
+    <br>
+    <button onclick="
+        document.querySelector('p').innerText='You chose: heads.';
+    ">heads</button>
+    <button onclick="
+        document.querySelector('p').innerText='You chose: tails.';
+    ">tails</button>
+    <p></p>
+    <br>
+    <input type="text" class="window" placeholder="Your name" onkeydown="
+    if (event.key=='Enter'){
+        writeName();
+    }
+    ">
+    
+    <button onclick="writeName()">Submit</button>
+
+    <p class="output"></p>
+    <script>
+        function writeName(){
+            let name=document.querySelector(".window").value;
+            document.querySelector(".output").innerText=`Your name is: ${name}`;
+        }
+
+        console.log(document.querySelector("button"));
+        document.querySelector(".second").innerText='9b done!';
+        
+    </script>
+
+</body>
+</html>
