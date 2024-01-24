@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/11-todo-list.css">
+</head>
+<body>
+    <p>Todo List</p>
+    <input onkeyup="
+    if(event.key=='Enter'){
+        addToArray();
+    }
+" class="js-name-input" placeholder="Task name">
+    <button onclick="addToArray()">Add</button>
+    <p>Todo List 2</p>
+    <input onkeyup="
+        if(event.key=='Enter'){
+            addToArray2();
+        }
+    " class="js-todo-list" type="text" placeholder="Todo name">
+    <button onclick="
+        addToArray2();
+    ">Add</button>
+    <div class="js-todo-output">
+        
+    </div>
+    <br>
+    <div class="todo-div">
+        <input onkeyup="{
+            if (event.key=='Enter'){
+                addToArray3();
+            }
+        }" placeholder="Task name" class="js-input-advanced input-final" type="text">
+        <input class="js-date date-final" type="date" name="" id="">
+        <button class="button-final" onclick="addToArray3();">Add</button>
+    </div>
+    <div class="output-list-advanced todo-grid"></div>
+
+    <script src="scripts/11-todo-list.js"></script>
+</body>
+</html>
