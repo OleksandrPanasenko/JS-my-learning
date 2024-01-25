@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="change()" class="changing">Start</button>
+    <br>
+    <button onclick="changeLoading();" class="changing-load">Start</button>
+    <br>
+    <button onclick="add();">Add to cart</button>
+    <div class="Adding"></div>
+    <button class="refresh" onclick="refreshAdd();">Add to cart</button>
+    <div class="Refresh-adding"></div>
+    <button onclick="number++;">Add</button>
+    <button onclick="if (number>0) number--;">Remove</button>
+    <script>
+        let number=2;
+        function change(){
+            setTimeout(function(){
+                const element=document.querySelector('.changing');
+                if(element.innerText=="Start") element.innerHTML='Finished!';
+                else element.innerHTML='Start';
+            },1000);
+        }
+        function changeLoading(){
+            const element=document.querySelector('.changing-load');
+                if(element.innerText=="Start"){
+                    setTimeout(function(){
+                        element.innerHTML='Finished!';
+                    },1000); 
+                    element.innerHTML='Loading...';
+                }
+                else{
+                    setTimeout(function(){
+                        element.innerHTML='Start';
+                    },1000); 
+                    element.innerHTML='Unoading...';
+                } 
+            
+        }
+        function add(){
+            setTimeout(function(){
+                document.querySelector(".Adding").innerText="";
+            }, 2000);
+            document.querySelector(".Adding").innerText="Added";
+        }
+        let TimeID;
+        function refreshAdd(){
+            if(TimeID!=null){
+                clearTimeout(TimeID);
+            }
+            TimeID=setTimeout(function(){
+                document.querySelector(".Refresh-adding").innerText="";
+            }, 1000+500*Math.random());
+            document.querySelector(".Refresh-adding").innerText="Added";
+        }
+
+        setInterval(function displayMessages(){
+            if(number===0){
+                document.title=`App`;
+            }
+            else{
+                document.title=`(${number}) New messages`;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
