@@ -8,23 +8,9 @@
 </head>
 <body>
     <p class="title">Rock paper scissors</p>
-    <button class="emoji" onclick="
-        
-        let result=playGame('rock');
-        console.log(result);
-        //alert(result);
-        
-    "><img src="rock-emoji.png" alt="rock"></button>
-    <button class="emoji" onclick="
-        result=playGame('paper');
-        //alert(result);
-        console.log(result);
-    "><img src="paper-emoji.png" alt="paper"></button>
-    <button class="emoji" onclick="
-        result=playGame('scissors');
-        //alert(result);
-        console.log(result);
-    "><img src="scissors-emoji.png" alt="scissors"></button>
+    <button class="emoji js-rock-button" onclick=""><img src="rock-emoji.png" alt="rock"></button>
+    <button class="emoji js-paper-button" onclick=""><img src="paper-emoji.png" alt="paper"></button>
+    <button class="emoji js-scissors-button" onclick=""><img src="scissors-emoji.png" alt="scissors"></button>
     <p class="js-result result"></p>
     <p class="js-moves"></p>
     <p class="js-score"></p>
